@@ -9,6 +9,21 @@
 
 <script>
   const cx = document.querySelector("canvas").getContext("2d");
+
+  let colors = {
+    red: 200,
+    green: 0,
+    blue: 0
+  };
+
+  function getColor() {
+    console.log("colors=" + `rgb(${colors.red},${colors.green},${colors.blue})`);
+    colors.red = 255;
+    console.log("colors=" + `rgb(${colors.red},${colors.green},${colors.blue})`);
+    colors.blue = 255;
+    console.log("colors=" + `rgb(${colors.red},${colors.green},${colors.blue})`);
+  }
+
   function branch(length, angle, scale) {
     cx.fillRect(0,0,2,length);
     if (length<8) return;
@@ -21,8 +36,14 @@
     cx.restore();
   }
   cx.translate(300,0);
+  cx.fillStyle = "rgb(255,0,0)";
+  let red = 255;
+  let green = 100;
+  let blue = 100;
+  cx.fillStyle = `rgb(${red},${green},${blue})`;
   branch(60,0.5,0.8);
 
+  getColor();
 </script>
 </body>
 </html>
