@@ -46,27 +46,13 @@
   }
 
   cx.translate(300,0);
+  //cx.fillStyle = "rgb(255,0,0)";
+  let red = 255;
+  let green = 100;
+  let blue = 100;
+  cx.fillStyle = `rgb(${red},${green},${blue})`;
   branch(60,0.5,0.8);
   getColor();
-
-  const doSomethingAsync = async () => {
-    console.log("111111 før sov");
-    await sov(1000);
-    console.log("22222 færdig sov")
-    colors.red = 255;
-    colors.green = colors.green + 5;
-    colors.blue = 5;
-    branch(60, 0.5, 0.8);
-  }
-
-  const kaldAsync = async () => {
-    while (true) {
-      await doSomethingAsync();
-    }
-  }
-
-  kaldAsync();
-
 </script>
 </body>
 </html>
